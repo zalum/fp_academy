@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 public class Task1 {
 
     public List<Integer> doIt(int noNumbers) {
-        IntStream stream = IntStream.iterate(1, value -> value + 1).limit(noNumbers);
+        IntStream stream = IntStream.iterate(1, value -> value + 1).map(value->value*value).limit(noNumbers);
         return collectToList(stream);
     }
 
