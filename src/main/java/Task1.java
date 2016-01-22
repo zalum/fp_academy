@@ -7,12 +7,16 @@ public class Task1 {
 
     public List<Integer> doIt(int noNumbers) {
         IntStream positiveNumbers = positiveNumbers();
-        IntStream stream = take(noNumbers, positiveNumbers);
+        IntStream stream = take(noNumbers, squaresOf(positiveNumbers));
         return collectToList(stream);
     }
 
+    private IntStream squaresOf(IntStream numbers) {
+        return numbers.map(value->value*value);
+    }
+
     private IntStream take(int noNumbers,
-                           IntStream positiveNumbers) {return positiveNumbers.limit(noNumbers).map(value -> value * value);}
+                           IntStream positiveNumbers) {return positiveNumbers.limit(noNumbers);}
 
     private IntStream positiveNumbers() {return IntStream.iterate(1, value -> value + 1);}
 
