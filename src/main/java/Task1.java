@@ -16,7 +16,7 @@ public class Task1 {
     }
 
     private IntStream take(int noNumbers,
-                           IntStream positiveNumbers) {return positiveNumbers.limit(noNumbers);}
+                           IntStream numbers) {return numbers.limit(noNumbers);}
 
     private IntStream positiveNumbers() {return IntStream.iterate(1, value -> value + 1);}
 
