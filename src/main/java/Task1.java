@@ -6,9 +6,13 @@ import java.util.stream.IntStream;
 public class Task1 {
 
     public List<Integer> doIt(int noNumbers) {
-        IntStream stream = positiveNumbers().limit(noNumbers).map(value -> value * value);
+        IntStream positiveNumbers = positiveNumbers();
+        IntStream stream = take(noNumbers, positiveNumbers);
         return collectToList(stream);
     }
+
+    private IntStream take(int noNumbers,
+                           IntStream positiveNumbers) {return positiveNumbers.limit(noNumbers).map(value -> value * value);}
 
     private IntStream positiveNumbers() {return IntStream.iterate(1, value -> value + 1);}
 
