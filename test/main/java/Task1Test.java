@@ -21,4 +21,16 @@ public class Task1Test {
         //then
         assertThat(result).hasSize(numberOfNumbers);
     }
+
+    @Test
+    public void shouldReturnSquares() {
+        //given
+        int numberOfNumbers = 3;
+
+        //when
+        List<Integer> result = task1.doIt(numberOfNumbers);
+
+        //then
+        assertThat(result).containsSequence(1,4,9);
+    }
 }
