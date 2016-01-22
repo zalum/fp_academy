@@ -6,8 +6,7 @@ import java.util.stream.IntStream;
 public class Task1 {
 
     public List<Integer> doIt(int noNumbers) {
-        IntStream positiveNumbers = positiveNumbers();
-        IntStream stream = take(noNumbers, squaresOf(positiveNumbers));
+        IntStream stream = take(noNumbers, squaresOf(positiveNumbers()));
         return collectToList(stream);
     }
 
